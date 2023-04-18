@@ -69,8 +69,8 @@
         <div class="row justify-content-center">
             <div class="col-12 col-md-10">
                 <blockquote>
-                <h5 class="mbr-section-title mbr-fonts-style mb-2 display-7"><strong>Formal Methods :(, should I attend this tutorials?</strong></h5>
-                <p class="mbr-text mbr-fonts-style display-7">Formal methods can be hard, the purpose of this tutorial is to introduce tools and techniques that helps make formal methods easy. Please attend the tutorial to learn about formal methods and how engineers at Amazon Web Services (AWS) leverage it in practice.</p></blockquote>
+                <h5 class="mbr-section-title mbr-fonts-style mb-2 display-7"><strong>Formal Methods, should I attend this tutorials?</strong></h5>
+                <p class="mbr-text mbr-fonts-style display-7">Formal methods are rigorous techniques for specification, analysis, and verification of software systems. Formal methods complement the existing testing approaches to validate correctness of complex system. The general perception is that formal methods is hard to apply in practice, has steep learning curve, fails to scale for real-world distributed systems. The purpose of this tutorial is to introduce tools and techniques that help make formal methods easy to apply to distributed systems. Please attend the tutorial to learn about formal methods and how engineers at Amazon Web Services (AWS) leverage them in practice.</p></blockquote>
             </div>
         </div>
     </div>
@@ -82,7 +82,7 @@
         <div class="row justify-content-center">
             <div class="title col-12 col-md-9">
                 <h3 class="mbr-section-title mbr-fonts-style align-center mb-4 display-5"><strong>Abstract</strong></h3>
-                <h4 class="mbr-section-subtitle align-center mbr-fonts-style mb-4 display-7">Large scale distributed systems are difficult to design and test. Hence, it is not uncommon for design bugs to escape guard rails of design reviews, functional and stress testing, and get uncovered by customers in production. Formal methods can play an important role in addressing these challenges and help catch these bugs early on in the development process. <strong>In this tutorial, we present formal methods tools and techniques used at Amazon Web Services (AWS) to reason about the correctness of distributed systems.&nbsp;</strong><span style="font-size: 1.2rem;">We will provide an introduction to the P framework and also share our experience of integrating P in all the phases of the development process from design, to testing, to after deployment in production<em>.</em><strong>&nbsp;</strong></span><span style="font-size: 1.2rem;">One of our goals with this tutorial is to ignite a discussion between the formal methods and systems community on challenges faced by practitioners in industry when building complex distributed systems.</span></h4>
+                <h4 class="mbr-section-subtitle align-center mbr-fonts-style mb-4 display-7">Large scale distributed systems are difficult to design and test. Hence, it is not uncommon for design bugs to escape guard rails of design reviews, pass functional and stress testing, and get uncovered when serving customers in production. Formal methods can play an important role in addressing these challenges and help catch these bugs early on in the development process. <strong>In this tutorial, we present formal methods tools and techniques used at Amazon Web Services (AWS) to reason about the correctness of distributed systems</strong>. We will provide an introduction to the P framework and also share our experience of integrating P in all phases of the development process from design to testing to deployment in production. One goal of this tutorial is to ignite a discussion between the formal methods and systems communities on the challenges faced by practitioners in industry when building complex distributed systems.</h4>
                 
             </div>
         </div>
@@ -95,7 +95,7 @@
         <div class="row justify-content-center">
             <div class="title col-12 col-md-9">
                 <h3 class="mbr-section-title mbr-fonts-style align-center mb-4 display-5"><strong>P Framework</strong></h3>
-                <h4 class="mbr-section-subtitle align-center mbr-fonts-style mb-4 display-7">P is a state machine based programming language for formally modeling and specifying complex distributed systems. P allows programmers to model their system design as a collection of communicating state machines. P supports several backend analysis engines (based on formal techniques like model checking and symbolic execution) to check that the distributed system modeled in P satisfy the desired correctness specifications. P leverages runtime monitoring to connect design level specifications to system implementation.</h4>
+                <h4 class="mbr-section-subtitle align-center mbr-fonts-style mb-4 display-7">This tutorial covers the P framework and its associated tools.  P is a state machine based programming language for formally modeling and specifying complex distributed systems. P allows programmers to model their system design as a collection of communicating state machines. P supports several backend analysis engines (based on formal techniques like model checking and symbolic execution) to check that the distributed system modeled in P satisfies the desired correctness specification. P leverages runtime monitoring to connect design level specifications to system implementations.</h4>
                 
             </div>
         </div>
@@ -116,15 +116,15 @@
                 <div class="row justify-content-center">
                     <div class="col-12 col-lg-6">
                         <ul class="list mbr-fonts-style display-7">
-                            <li><strong>State machine based programming language.</strong><br>P allows programmers to specify their system design as a collection of communicating state machines, which is how they normally think about complex system design. P being a programming language (rather than a mathematical modeling language) has been one of the key reasons for its large-scale adoption in industry;.</li>
-                            <li><strong>Scalable Model Checking.</strong><br>P provides a scalable model checker to check that the distributed system modeled in P satisfy the desired correctness specifications. P leverages distributed compute to scale analysis to large system design and has helped find critical bugs inside AWS early on in design phase itself</li>
-                            <li><strong>Code conformance checking</strong><br>To bridge the gap between design specifications and the actual implementation, P leverages runtime monitoring to check that the system traces satisfy the P specifications checked during the design phase.</li>
+                            <li><strong>State machine based programming language.</strong><br>P allows programmers to specify their system design as a collection of communicating state machines, which is how they normally think about complex system design. P being a programming language (rather than a mathematical modeling language) has been one of the key reasons for its large-scale adoption in industry.</li>
+                            <li><strong>Scalable Model Checking.</strong><br>P provides a scalable model checker to check that the distributed system modeled in P satisfies the desired correctness specification. P leverages distributed compute clusters to scale its analysis to a large system design. It has helped find critical bugs inside AWS early on in the design phase.</li>
+                            <li><strong>Code conformance checking</strong><br>To bridge the gap between design specifications and the actual implementation, P leverages runtime monitoring to check that system traces satisfy the P specification checked during the design phase.</li>
                         </ul>
                     </div>
                     <div class="col-12 col-lg-6">
                         <ul class="list mbr-fonts-style display-7">
                             <li><strong>Performance simulations</strong><br>P also supports a backend explorer that performs random probabilistic simulations of the system for reasoning about performance quantitatively.&nbsp;</li>
-                            <li><strong>Integration into CI/CD<br></strong>P provides the capability to integrate formal analysis engines and code conformance checks into the CI/CD of the service teams.</li>
+                            <li><strong>Integration into CI/CD<br></strong>P provides the capability to integrate formal analysis engines and code conformance checks into the build pipelines of the service teams.</li>
                         </ul>
                     </div>
                 </div>
@@ -187,7 +187,7 @@
         <div class="row justify-content-center">
             <div class="title col-12 col-md-9">
                 <h3 class="mbr-section-title mbr-fonts-style align-center mb-4 display-5"><strong>Usage of P inside AWS</strong></h3>
-                <h4 class="mbr-section-subtitle align-center mbr-fonts-style mb-4 display-7">Teams across AWS from storage (e.g., S3, EBS), to databases (e.g., Aurora, DynamoDB), to compute (e.g., EC2) have been using P to reason about the correctness of complex distributed protocols driving these services. P has helped find and eliminate several critical bugs in the design, early on, these bugs could not be found using the traditional testing approaches. From our experience (4+ years) of using P inside AWS, we have observed that P has helped developers in several different ways, from acting as a thinking tool, to an effective bug finder for complex designs, and finally, boosting the overall velocity of service teams in delivering reliable systems. We will share some of the experiences in the tutorials.</h4>
+                <h4 class="mbr-section-subtitle align-center mbr-fonts-style mb-4 display-7">Teams across AWS from storage (e.g., S3, EBS), to databases (e.g., Aurora, DynamoDB), to compute (e.g., EC2) have been using P to reason about the correctness of the innovative distributed protocols utilized by these services. P has helped find and eliminate several critical design bugs that could not be found using the traditional testing approaches. From our experience (4+ years) of using P inside AWS, we have observed that P has helped developers in several different ways, from acting as a thinking tool, to an effective bug finder for complex designs, and finally, boosting the overall velocity of service teams in delivering reliable systems. We will share some of our experiences in this tutorial.</h4>
                 
             </div>
         </div>
@@ -264,7 +264,7 @@
             </div>
         </div>
     </div>
-</section><section class="display-7" style="padding: 0;align-items: center;justify-content: center;flex-wrap: wrap;    align-content: center;display: flex;position: relative;height: 4rem;"><a href="https://mobiri.se/2995687" style="flex: 1 1;height: 4rem;position: absolute;width: 100%;z-index: 1;"><img alt="" style="height: 4rem;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></a><p style="margin: 0;text-align: center;" class="display-7">Made with &#8204;</p><a style="z-index:1" href="https://mobirise.com/offline-website-builder.html">Offline Website Builder</a></section><script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/parallax/jarallax.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/ytplayer/index.js"></script>  <script src="assets/theme/js/script.js"></script>  
+</section><section class="display-7" style="padding: 0;align-items: center;justify-content: center;flex-wrap: wrap;    align-content: center;display: flex;position: relative;height: 4rem;"><a href="https://mobiri.se/2995687" style="flex: 1 1;height: 4rem;position: absolute;width: 100%;z-index: 1;"><img alt="" style="height: 4rem;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></a><p style="margin: 0;text-align: center;" class="display-7">Made with &#8204;</p><a style="z-index:1" href="https://mobirise.com/html-editor.html">WYSIWYG HTML Editor</a></section><script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/parallax/jarallax.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/ytplayer/index.js"></script>  <script src="assets/theme/js/script.js"></script>  
   
   
 </body>
